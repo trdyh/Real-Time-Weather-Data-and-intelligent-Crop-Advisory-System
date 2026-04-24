@@ -21,19 +21,22 @@ jobs:
           key: ${{ secrets.EC2_KEY }}
           script: |
 
+            set -e
+
             cd /home/ubuntu/Real-Time-Weather-Data-and-intelligent-Crop-Advisory-System
             git pull origin main
 
-            # Backend
+            # ---------------- BACKEND ----------------
             cd server
             npm install
             pm2 restart weather-app || pm2 start index.js --name weather-app
             pm2 save
 
-            # Frontend
+            # ---------------- FRONTEND ----------------
             cd ../client
             npm install
             npm run build
 
+            # Deploy build to nginx
             sudo rm -rf /var/www/html/*
             sudo cp -r build/* /var/www/html/
