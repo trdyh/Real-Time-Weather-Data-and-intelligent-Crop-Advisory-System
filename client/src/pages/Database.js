@@ -382,7 +382,7 @@ const Database = () => {
   useEffect(() => {
     const fetchHistoryCount = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/history", {
+        const res = await fetch("http://backend:5000/api/history", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },

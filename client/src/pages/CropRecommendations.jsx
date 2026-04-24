@@ -26,7 +26,7 @@ const CropRecommendation = () => {
   const getCropRecommendations = async (weather) => {
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/crop/recommend',
+        'http://backend:5000/api/crop/recommend',
         weather
       );
 

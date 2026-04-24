@@ -38,7 +38,7 @@ const CropDatabase = () => {
 
   const fetchCrops = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/crops');
+      const response = await axios.get('http://backend:5000/api/crops');
       setCrops(response.data);
       setFilteredCrops(response.data);
     } catch (error) {

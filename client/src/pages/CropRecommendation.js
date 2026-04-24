@@ -87,7 +87,7 @@ const CropRecommendation = () => {
         location: weather.location || city
       });
 
-      const response = await axios.post('http://localhost:5000/api/crops/recommend', {
+      const response = await axios.post('http://backend:5000/api/crops/recommend', {
         temperature: weather.temperature,
         humidity: weather.humidity,
         rainfall: weather.rainfall || 0,
